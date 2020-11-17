@@ -40,11 +40,11 @@ Food.scale = 0.2
 foodObj = new Foods()
 
 feed = createButton("FEED FLUPPY")
-feed.position(400, 200)
+feed.position(560, 175)
 feed.mousePressed(feedDog)
 
 add = createButton("ADD FOOD FOR FLUPPY")
-add.position(600, 200)
+add.position(525, 200)
 add.mousePressed(addFood)
 
 
@@ -62,6 +62,15 @@ function draw() {
   background(back)
   
   foodObj.display();
+
+if(dog.x === 400){
+feed.hide()
+
+}
+else{
+  feed.show()
+ 
+}
 
 if (keyDown("up")) {
  
@@ -92,28 +101,28 @@ fill("red")
 stroke("white")
 
 if (lastFed>=12) {
-  text("LAST FED : "+ lastFed%12 + "PM",  150, 200)
+  text("LAST FED : "+ lastFed%12 + "PM",  200, 200)
 
 }
 else if(lastFed == 0){
-text("LAST FED : 12 AM", 150, 200)
+text("LAST FED : 12 AM", 200, 200)
 }
 else{
-  text("LAST FED :" +lastFed + "AM", 150, 200)
+  text("LAST FED :" +lastFed + "AM", 200, 200)
 }
 
 
-
-  dog.display();
+dog.display();
+  
   drawSprites();
 
 textSize(18)
 fill("white")
 stroke("orange")
-  text("PRESS THE UP ARROW, THEN THE LEFT!" ,20, 20)
-  text("AND FINALLY PRESS FEED BUTTON TO FEED FLUPPY!", 20, 40)
-  text("AFTER HE FINISHES,", 10, 60)
-text("PRESS RIGHT TO MAKE HIM SIT AGAIN!", 60, 80)
+  text(">PRESS THE UP ARROW, THEN THE LEFT!" ,20, 20)
+  text(">AND FINALLY PRESS FEED BUTTON TO FEED FLUPPY!", 20, 40)
+  text(">AFTER HE FINISHES,", 10, 60)
+text(">PRESS RIGHT TO MAKE HIM SIT AGAIN!", 60, 80)
 
 }
 
